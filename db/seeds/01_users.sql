@@ -6,3 +6,4 @@ INSERT INTO users (
     'Iva', 'Harrison', 'allisonjackson@mail.com', 'password'),
     (
     'Lloyd', 'Jefferson', 'asherpoole@gmx.com', 'password');
+-- test git
