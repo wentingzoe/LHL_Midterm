@@ -2,7 +2,7 @@ INSERT INTO tasks (user_id, status_id, task_title, task_description,start_date, 
 -- Watching list
 (1, 1,'Inception', 'Very nice movie to watch','2022-01-15','2022-01-16'),
 (2, 1, 'Citizen Kane', 'Hollywood classic','2022-01-20','2022-01-21' ),
-(3, 1, 'Avengers: Endgame', 'Need to know what happened to the avengers!','2022-04-15','2022-04-16')
+(3, 1, 'Avengers: Endgame', 'Need to know what happened to the avengers!','2022-04-15','2022-04-16'),
 
 -- Eat list
 (1, 1, 'The Butcher Chef', 'Nice!!','2022-01-15','2022-01-16'),
