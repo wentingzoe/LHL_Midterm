@@ -40,14 +40,17 @@ const widgetsRoutes = require("./routes/widgets");
 
 const homepageRoute = require("./routes/homepage-route");
 const registerRoute = require("./routes/register-route");
+const loginRoute = require("./routes/login-route");
+const { response } = require("express");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
 app.use("/api/widgets", widgetsRoutes(db));
 
-app.use("/homepage", homepageRoute(db));
+app.use("/", homepageRoute(db));
 app.use("/register", registerRoute(db));
+app.use("/login", loginRoute(db));
 // Note: mount other resources here, using the same pattern above
 
 // Home page
