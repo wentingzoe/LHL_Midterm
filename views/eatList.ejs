@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>To Eat</title>
+
+  <!-- Google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,700" rel="stylesheet">
+
+  <!-- External CSS - Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+      <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+      <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css'>
+  <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+
+<!-- local CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/add_task.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/todo.css" type="text/css" />
+
+
+  <!-- Scripts -->
+    <!-- pickdate -->
+
+</head>
+
+<body>
+
+
+  <!-- HEADER -->
+  <%- include('partials/_header'); %>
+
+    <main id='mainContainer'>
+
+      <!-- SIDEBAR -->
+      <%- include('partials/_sidebar'); %>
+      <div class="mainContainer-todo">
+        <!-- Adding task-->
+        <%- include('partials/_add_task') %>
+      </div>
+
+    </main>
+
+</body>
+
+</html>
