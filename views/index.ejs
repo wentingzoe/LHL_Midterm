@@ -14,14 +14,8 @@
 </head>
 
 <body>
+  <%- include('../partials/_header') %>
 
-  <%- include('./partials/_header.ejs') %>
-
-  <h1>Have fun! 🥔</h1>
-
-  <% for (const task of tasks) { %>
-    <div><%=task.task_title %></div>
-  <% } %>
 </body>
 
 </html>

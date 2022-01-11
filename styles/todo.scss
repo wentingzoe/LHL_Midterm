@@ -1,0 +1,143 @@
+
+  #mainContainer {
+    display: flex;
+    flex-direction: row;
+    min-height: calc(100vh - 110px);
+    .menu{
+      background: radial-gradient(circle at 94.02% 88.03%, #54a4ff, transparent 100%),radial-gradient(circle at 25.99% 27.79%, #E5B9A3, transparent 100%),radial-gradient(circle at 50% 50%, #000000, #000000 100%);
+      height:100vh;
+      width:35%;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:5;
+      outline:none;
+      flex-basis: 20%;
+      font-weight: bold;
+      position: relative;
+
+      .avatar{
+        background:rgba(0,0,0,0.1);
+        padding:2em 0.5em;
+        text-align:center;
+
+        img{
+          width:100px;
+          border-radius:50%;
+          overflow:hidden;
+          border:4px solid #E5B9A3;
+          box-shadow:0 0 0 4px rgba(255,255,255,0.2);
+        }
+
+        img:hover{
+          border:4px solid white;
+          box-shadow:0 0 0 4px rgba(255, 255, 255, 0.584);
+        }
+
+        h2{
+          margin-top: 1rem;
+          font-family: 'Roboto';
+          font-weight: 50;
+          font-size: 1rem;
+          color:white;
+          letter-spacing:6px;
+          text-shadow:10px 10px 10px rgba(0,0,0,.3);
+        }
+      }
+
+      .cate{
+        list-style:none;
+        padding:0.5em 0;
+        margin-top:10%;
+        margin-bottom: 10%;
+        text-shadow:10px 10px 10px rgba(0,0,0,.3);
+        a{
+          color:white;
+          text-decoration: none;
+
+          &:hover{
+            color:#E5B9A3;
+          }
+        }
+        li{
+          color:white;
+          padding:0.5em 1em 0.5em 3em;
+          font-size:0.95em;
+          font-weight:regular;
+          background-repeat:no-repeat;
+          background-position:left 15px center;
+          background-size:auto 20px;
+          transition:all 0.15s linear;
+          cursor:pointer;
+
+          &:hover{
+            background-color:rgba(255, 255, 255, 0.125);
+          }
+
+          &:focus{
+            outline:none;
+          }
+
+        }
+      }
+      .task_status{
+
+        list-style:none;
+        padding:0.5em 0;
+        text-shadow:10px 10px 10px rgba(219, 236, 144, 0.3);
+        a{
+          color:#E5B9A3;
+          text-decoration: none;
+
+          &:hover{
+            color:#54a4ff;
+          }
+        }
+        li{
+          color:white;
+          padding:0.5em 1em 0.5em 3em;
+          font-size:0.95em;
+          font-weight:regular;
+          background-repeat:no-repeat;
+          background-position:left 15px center;
+          background-size:auto 20px;
+          transition:all 0.15s linear;
+          cursor:pointer;
+
+          &:hover{
+            background-color:rgba(3, 3, 3, 0.173);
+          }
+
+          &:focus{
+            outline:none;
+          }
+          }
+      }
+    }
+  }
+
+  .mainContainer-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    padding-left:8em;
+    padding-right: 8em;
+
+    // Trying to add row and column specifications
+  .row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: space-evenly;
+    width: 100%;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+  }
+
+}
