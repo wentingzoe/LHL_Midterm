@@ -1,24 +1,55 @@
+const { request } = require('express');
 const express = require('express');
 const router = express.Router();
-
 
 const homepageRoute = (db) => {
     
     router.get("/", (request, response) => {
-        db.query('SELECT * FROM tasks;')
-          .then((task) => {
-              //response.json(task.rows);
-              response.send(createHTML(task.rows));
-          });
+        response.render("index")
     });
 
-    router.get("/:id", (request, response) => {
-        db.query('SELECT * FROM tasks WHERE id = $1;', [request.params.id])
+    router.get("/profile", (request, response) => {
+        db.query('SELECT * FROM tasks;')
           .then((task) => {
-              //response.json(task.rows[0]);
-              //console.log(task.row[0]);
-              response.send(createHTML([task.rows[0]]));
-          });
+            const templateVars = { tasks : task.rows }
+            response.render("id", templateVars);
+        })
+    });
+
+    router.get("/profile/eat", (request, response) => {
+        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 2;')
+          .then((watchlist) => {
+            response.send(watchlist.rows);
+        });
+    });
+
+    router.get("/profile/read", (request, response) => {
+        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 3;')
+          .then((watchlist) => {
+            response.send(watchlist.rows);
+        });
+    });
+
+    router.get("/profile/buy", (request, response) => {
+        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 4;')
+          .then((watchlist) => {
+            response.send(watchlist.rows);
+        });
+    });
+
+    router.get("/profile/watch", (request, response) => {
+        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 1;')
+          .then((watchlist) => {
+            response.send(watchlist.rows);
+        });
+    });
+
+    router.get("/profile/newtask", (request, response) => {
+        response.render("id");
+    })
+
+    router.get("/profile/tasks", (request, response) => {
+        
     });
 
     return router;
