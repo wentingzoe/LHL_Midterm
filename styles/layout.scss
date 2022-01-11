@@ -1,5 +1,9 @@
 // See: https://sass-lang.com/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');body,
+
 body,
+
 html {
   margin: 0;
 }
@@ -12,7 +16,11 @@ nav {
   height: 80px;
   color: #FFFFFF;
   background-color: #4686C8;
-  font-family: "Secular One";
+
+  font-family: 'Poppins', sans-serif;
+
+//   font-family: "Secular One";
+
   font-size: 30px;
   display: flex;
   justify-content: space-between;
@@ -44,4 +52,17 @@ nav {
     position: fixed;
     right: 2px;
   }
+
 }
+
+span {
+
+  #ind {
+    display:flex;
+    flex-direction: row;
+  }
+}
+
+
+
+
