@@ -44,13 +44,23 @@ const homepageRoute = (db) => {
         });
     });
 
+    router.get("/profile/completed", (request, response) => {
+        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE status_name = "Not completed";')
+          .then((watchlist) => {
+            response.send(watchlist.rows);
+        });
+    });
+
+    router.get("/profile/archived", (request, response) => {
+        db.query('SELECT * FROM tasks WHERE archived = "f";')
+          .then((watchlist) => {
+            response.send(watchlist.rows);
+        });
+    });
+
     router.get("/profile/newtask", (request, response) => {
         response.render("id");
     })
-
-    router.get("/profile/tasks", (request, response) => {
-        
-    });
 
     return router;
 };
