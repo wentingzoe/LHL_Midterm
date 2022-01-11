@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Your Profile</title>
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/sidee-nav.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+</head>
+  <%- include('./partials/_header') %>
+  <nav class="menu" tabindex="0">
+    <div class="smartphone-menu-trigger"></div>
+    <header class="avatar">
+      <img src="https://s3.amazonaws.com/uifaces/faces/twitter/kolage/128.jpg" />
+      <h2>John D.</h2>
+    </header>
+    <ul>
+      <li tabindex="0" class="icon-dashboard"><span>Dashboard</span></li>
+      <li tabindex="0" class="icon-customers"><span>Customers</span></li>
+      <li tabindex="0" class="icon-users"><span>Users</span></li>
+      <li tabindex="0" class="icon-settings"><span>Settings</span></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="helper">
+      RESIZE THE WINDOW
+      <span>Breakpoints on 900px and 400px</span>
+    </div>
+  </main>
+
+</html>
