@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Register</title>
+  
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+  <script type="text/javascript" src="/scripts/app.js"></script>
+
+</head>
+
+<header>
+
+    <%- include('./partials/_header.ejs') %>
+
+</header>
+
+<body>
+
+    <h1>REGISTER</h1>
+    <div class="form-group">
+        <label for="email">Email:<input style="width: 100%" type="email" name="email" id="email" placeholder="Please enter your email"></label>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:<input style="width: 100%" type="password" name="password" id="password" placeholder="Please enter your password"></label>
+    </div>
+        <input type="submit" class="btn btn-outline-dark" value="Register" />
+    </div>
+
+</body>
+
+</html>
