@@ -8,7 +8,8 @@ const homepageRoute = (db) => {
         db.query('SELECT * FROM tasks;')
           .then((task) => {
               //response.json(task.rows);
-              response.send(createHTML(task.rows));
+              const templateVars = { tasks: task.rows }
+              response.render("index", templateVars);
           });
     });
 
