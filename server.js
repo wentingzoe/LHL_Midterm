@@ -41,10 +41,15 @@ const homepageRoute = require("./routes/homepage-route");
 const registerRoute = require("./routes/register-route");
 const loginRoute = require("./routes/login-route");
 const { response } = require("express");
+const addtask = require("./routes/tasks")
+
 
 app.use("/", homepageRoute(db));
 app.use("/register", registerRoute(db));
 app.use("/login", loginRoute(db));
+app.use("/tasks", addtask(db));
+
+
 
 // Note: mount other resources here, using the same pattern above
 
