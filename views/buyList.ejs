@@ -30,6 +30,8 @@
 
 <body>
 
+  
+
 
   <!-- HEADER -->
   <%- include('partials/_header'); %>
@@ -41,6 +43,13 @@
       <div class="mainContainer-todo">
         <!-- Adding task-->
         <%- include('partials/_add_task') %>
+      </div>
+
+      <div class="taskcard">
+      <% for (const i of toBuys) { %>
+        <h2><%=i.task_title%></h2>
+        <h4><%=i.task_description%></h4> 
+      <% } %>
       </div>
 
     </main>

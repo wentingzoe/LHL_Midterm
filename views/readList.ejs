@@ -40,7 +40,14 @@
       <%- include('partials/_sidebar'); %>
       <div class="mainContainer-todo">
         <!-- Adding task-->
-        <%- include('partials/_add_task') %>
+      <%- include('partials/_add_task') %>
+      </div>
+
+      <div class="taskcard">
+        <% for (const i of toReads) { %>
+          <h2><%=i.task_title%></h2>
+          <h4><%=i.task_description%></h4> 
+        <% } %>
       </div>
 
     </main>

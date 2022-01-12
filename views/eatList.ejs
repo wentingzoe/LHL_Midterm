@@ -43,6 +43,13 @@
         <%- include('partials/_add_task') %>
       </div>
 
+      <div class="taskcard">
+        <% for (const i of toEats) { %>
+          <h2><%=i.task_title%></h2>
+          <h4><%=i.task_description%></h4> 
+        <% } %>
+      </div>
+
     </main>
 
 </body>
