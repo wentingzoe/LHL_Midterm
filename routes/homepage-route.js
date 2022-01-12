@@ -16,6 +16,8 @@ const homepageRoute = (db) => {
         })
     });
 
+    
+
     router.get("/tasks/eat", (request, response) => {
         db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 2;')
           .then((toEat) => {
@@ -68,9 +70,20 @@ const homepageRoute = (db) => {
         response.render("id");
     });
 
-    router.get("/tasks/profile", (request, response) => {
+    router.get("/profile", (request, response) => {
         response.render("profile");
-    })
+    });
+
+    router.get("/tasks/:id", (request, response) => {
+        let queryString = 'SELECT * FROM tasks WHERE id = $1;'
+        let queryParams = [request.params.id];
+        db.query(queryString, queryParams)
+          .then((task) => {
+            const templateVars = { task : task.rows[0] }
+            console.log(task.rows[0]);
+            response.render("editpage", templateVars);
+        })
+    });
 
     return router;
 };
