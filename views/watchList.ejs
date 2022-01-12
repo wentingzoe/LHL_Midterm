@@ -41,13 +41,34 @@
       <div class="mainContainer-todo">
         <!-- Adding task-->
         <%- include('partials/_add_task') %>
-      </div>
 
-      <div class="taskcard">
         <% for (const i of toWatchs) { %>
-          <h2><%=i.task_title%></h2>
-          <h4><%=i.task_description%></h4> 
-        <% } %>
+          <article class="showtask">
+            <div class="card">
+              <h2><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg>Watch List</h2>
+                <div class="dropdown">
+                  <button class="dropbtn">Change Category</button>
+                  <div class="dropdown-content">
+                    <a href="#">Watch</a>
+                    <a href="#">Eat</a>
+                    <a href="#">Read</a>
+                    <a href="#">Buy</a>
+                  </div>
+                </div>
+                <ul>
+                  <li>
+                    <input type="checkbox" class ="checkbox" />
+                    <h3 class="tasktitle"><%=i.task_title%></h3>
+                    <p class="taskdes"><%=i.task_description%></p>
+                    <button >Edit</button>
+                    <button>Delete</button>
+                  </li>
+                </ul>
+            </div>
+          </article>
+          <% } %>
+          
       </div>
 
     </main>
