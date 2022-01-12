@@ -68,7 +68,7 @@ const homepageRoute = (db) => {
         response.render("id");
     });
 
-    router.get("/tasks/profile", (request, response) => {
+    router.get("/profile", (request, response) => {
         response.render("profile");
     })
 
