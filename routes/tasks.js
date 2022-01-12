@@ -15,12 +15,6 @@ module.exports = (db) => {
 
       db.query(queryString, queryParams)
       .then((data) => {
-        let addtodo = `INSERT INTO todo
-        (task_id, category_id)
-        VALUES ($1, $2)
-        RETURNING *;`;
-      })
-      .then((data) => {
         const tasks = data.rows;
         console.log("Successfully, inserted!");
         res.json({ tasks });
