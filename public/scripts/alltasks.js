@@ -1,7 +1,6 @@
 // lINK THE INPUT DATA TO LOCAL DATABASE
 
 const { Pool } = require('pg');
-
 const pool = new Pool({
   user: 'labber',
   password: 'labber',
@@ -22,6 +21,9 @@ const pool = new Pool({
   .then(res => res.rows)
   .catch(err => console.error(err.message));
 }
-exports.addtask = addtask;
+
+
+
+exports.alltasks = alltasks;
 
 
