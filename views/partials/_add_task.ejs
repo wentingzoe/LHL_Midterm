@@ -1,20 +1,33 @@
+<article class="new-task-container">
+  <div class="newcard newcard--accent">
+    <h2><svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-coffee" href="#icon-coffee" />
+    </svg>What you want to do?</h2>
+    <form action="/tasks/add" method="POST" class="new-task">
+    <label class="input">
+      <input name="task_title" class="input__field" type="text" placeholder=" " />
+      <span class="input__label">Task Title</span>
+    </label>
+    <label class="input">
+      <input class="input__field" type="text" placeholder=" " />
+      <span class="input__label">Task description</span>
+    </label>
 
-<article class="new-task-container thick lined">
-  <h2>Add task</h2>
-  <form action="/tasks/add" method="POST" class="new-task-content">
-    <div class="new-task-textarea thick dotted">
-      <label for="task_title"></label>
-      <input name="task_title" class="form-control" type="text" placeholder="Title">
-      <label for="task_desc"></label>
-      <textarea name="task_desc" class="form-control" placeholder="Task description" name="" id="" cols="30" rows="10"></textarea>
-      <label for="startdate"></label>
-      <input name="startdate" class="form-control" type="text" placeholder="startdate:yyyy-mm-dd">
-      <label for="enddate"></label>
-      <input name="enddate" class="form-control" type="text" placeholder="endate:yyyy-mm-dd">
-    </div>
-
-    <div class="new-task-button">
-      <button type="submit">Add Task</button>
+    <div class="button-group">
+      <button class="pickdate">Pick Date</button>
+      <button type="submit">Send</button>
     </div>
   </form>
-</article>
+  </div>
+  </article>
+
+  <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+    <symbol id="icon-coffee" viewBox="0 0 20 20">
+      <title>icon-coffee</title>
+      <path fill="currentColor" d="M15,17H14V9h3a3,3,0,0,1,3,3h0A5,5,0,0,1,15,17Zm1-6v3.83A3,3,0,0,0,18,12a1,1,0,0,0-1-1Z"/>
+      <rect fill="currentColor" x="1" y="7" width="15" height="12" rx="3" ry="3"/>
+      <path fill="var(--color-accent)" d="M7.07,5.42a5.45,5.45,0,0,1,0-4.85,1,1,0,0,1,1.79.89,3.44,3.44,0,0,0,0,3.06,1,1,0,0,1-1.79.89Z"/>
+      <path fill="var(--color-accent)" d="M3.07,5.42a5.45,5.45,0,0,1,0-4.85,1,1,0,0,1,1.79.89,3.44,3.44,0,0,0,0,3.06,1,1,0,1,1-1.79.89Z"/>
+      <path fill="var(--color-accent)" d="M11.07,5.42a5.45,5.45,0,0,1,0-4.85,1,1,0,0,1,1.79.89,3.44,3.44,0,0,0,0,3.06,1,1,0,1,1-1.79.89Z"/>
+    </symbol>
+  </svg>
