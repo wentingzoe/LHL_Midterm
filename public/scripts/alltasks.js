@@ -15,6 +15,7 @@ const pool = new Pool({
  * @return {Promise<{}>} A promise to the task.
  */
 
+
 const addTask =  function(task) {
 
   const queryString = `INSERT INTO tasks (user_id, status_id, task_title, task_description,start_date, end_date, archived) VALUES ($1,$2,$3,$4,$5,$6,$7) RETURNING *`;
@@ -24,6 +25,7 @@ const addTask =  function(task) {
   .then(res => res.rows)
   .catch(err => console.error(err.message));
 }
+
 
 const deleteTask =  function(task) {
 
@@ -48,5 +50,10 @@ const editTask =  function(task) {
 }
 
 module.exports = { addTask, deleteTask, editTask };
+=======
+
+
+exports.alltasks = alltasks;
+
 
 

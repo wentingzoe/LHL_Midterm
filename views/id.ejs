@@ -15,6 +15,7 @@
       <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
       <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css'>
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <!-- local CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -26,15 +27,13 @@
   <!-- Scripts -->
     <!-- pickdate -->
     <script src ="/scripts/alltasks.js"></script>
+    <script src ="/scripts/showtask.js"></script>
 
 
 </head>
 
 <body>
 
-
-  <!-- HEADER -->
-  <%- include('partials/_header'); %>
 
     <main id='mainContainer'>
 
@@ -43,6 +42,7 @@
       <div class="mainContainer-todo">
         <!-- Adding task-->
         <%- include('partials/_add_task') %>
+        <%- include('partials/_show_task') %>
       </div>
 
     </main>
