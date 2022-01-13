@@ -24,6 +24,7 @@ module.exports = (db) => {
         res.json({ tasks });
       })
       .catch(err => {
+        console.log("I suck", err);
         res
           .status(500)
           .json({ error: err.message });

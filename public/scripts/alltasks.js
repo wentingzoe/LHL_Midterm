@@ -1,13 +1,13 @@
 // lINK THE INPUT DATA TO LOCAL DATABASE
 
-const { Pool } = require('pg');
+//const { Pool } = require('pg');
 
-const pool = new Pool({
-  user: 'labber',
-  password: 'labber',
-  host: 'localhost',
-  database: 'midterm'
-});
+//const pool = new Pool({
+//  user: 'labber',
+//  password: 'labber',
+//  host: 'localhost',
+//  database: 'midterm'
+//});
 
 /**
  * Add a new task to the database.
