@@ -22,8 +22,8 @@ CREATE TABLE tasks (
   catagory_id INTEGER REFERENCES categories(id) NOT NULL DEFAULT 4,
   task_title VARCHAR(255) NOT NULL,
   task_description TEXT,
-  start_date DATE NOT NULL DEFAULT CURRENT_DATE,
-  end_date DATE,
+  start_date TIMESTAMP NOT NULL DEFAULT CURRENT_DATE,
+  end_date TIMESTAMP,
   completed boolean NOT NULL DEFAULT FALSE,
   archived boolean NOT NULL DEFAULT FALSE
 );
