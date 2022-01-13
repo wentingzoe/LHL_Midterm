@@ -11,6 +11,7 @@ const homepageRoute = (db) => {
     router.get("/tasks", (request, response) => {
         db.query('SELECT * FROM tasks;')
           .then((task) => {
+            console.log(task.rows)
             const templateVars = { tasks : task.rows }
             response.render("id", templateVars);
         })
