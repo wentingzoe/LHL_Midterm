@@ -18,6 +18,7 @@ module.exports = (db) => {
       let queryParams = [req.body.task_title, req.body.task_description, 1, 1];
       db.query(queryString, queryParams)
       .then((data) => {
+
         const tasks = data.rows;
         console.log("Successfully, inserted!");
         res.json({ tasks });
