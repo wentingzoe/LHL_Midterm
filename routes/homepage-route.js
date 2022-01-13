@@ -58,7 +58,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/archived", (request, response) => {
-        db.query('SELECT * FROM tasks WHERE archived IS FALSE;')
+        db.query('SELECT * FROM tasks WHERE archived IS TRUE;')
           .then((archived) => {
             const templateVars = { archiveds : archived.rows }
             response.render("archived", templateVars);
