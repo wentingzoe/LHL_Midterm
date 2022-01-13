@@ -17,11 +17,11 @@
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
 
 <!-- local CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/add_task.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/todo.css" type="text/css" />
-
+<link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+<link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+<link rel="stylesheet" href="/styles/add_task.css" type="text/css" />
+<link rel="stylesheet" href="/styles/todo.css" type="text/css" />
+<link rel="stylesheet" href="/styles/show_task.css" type="text/css" />
 
   <!-- Scripts -->
     <!-- pickdate -->
@@ -47,34 +47,6 @@
         <%- include('partials/_add_task') %>
 
         <% for (const i of toEats) { %>
-          <article class="showtask">
-            <div class="card">
-              <h2><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg>List</h2>
-                <div class="dropdown">
-                  <button class="dropbtn">Change Category</button>
-                  <div class="dropdown-content">
-                    <a href="#">Watch</a>
-                    <a href="#">Eat</a>
-                    <a href="#">Read</a>
-                    <a href="#">Buy</a>
-                  </div>
-                </div>
-                <ul>
-                  <li>
-                    <input type="checkbox" class ="checkbox" />
-                    <div class="task_content" data-id="<%=i.id%>" data-title="<%=i.task_title%>" data-description="<%=i.task_description%>">
-                      <h3 class="tasktitle"><%=i.task_title%></h3>
-                      <p class="taskdes"><%=i.task_description%></p>
-                    </div>
-                    <button class="edit_button">Edit</button>
-                    <form method="POST" action="/tasks/<%=i.id%>/delete">
-                      <button>Delete</button>
-                    </form>
-                  </li>
-                </ul>
-            </div>
-          </article>
 
           <article class="showtask">
             <div class="card">
