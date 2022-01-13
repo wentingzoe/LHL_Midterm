@@ -1,12 +1,14 @@
 const express = require('express');
 const router  = express.Router();
+// const {checkProduct} = require('../categories/buyapi')
+
 
 module.exports = (db) => {
 
   router.post("/add", (req, res) => {
     console.log("test!")
     console.log(req.body)
-
+    // checkProduct(req.body.task_title);
       let queryString = `
         INSERT INTO tasks (task_title, task_description, user_id, status_id)
         VALUES ($1, $2, $3, $4)
@@ -26,7 +28,9 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
       res.redirect("/tasks");
+
   });
+
 
   router.post("/:id/delete", (request, response) => {
     let queryString = (`DELETE FROM tasks WHERE id = $1 RETURNING *;`);
@@ -45,7 +49,7 @@ module.exports = (db) => {
 
   router.post("/:id", (request, response) => {
     const task = request.body;
-    const id = request.params.id; 
+    const id = request.params.id;
     console.log("this is ",task);
     const queryString = `UPDATE tasks
         SET task_title = $1, task_description = $2
