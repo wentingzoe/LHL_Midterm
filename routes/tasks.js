@@ -15,7 +15,7 @@ module.exports = (db) => {
 
       db.query(queryString, queryParams)
       .then((data) => {
-        let addtodo = `INSERT INTO todo
+        let addtodo = `INSERT INTO todolists
         (task_id, category_id)
         VALUES ($1, $2)
         RETURNING *;`;
