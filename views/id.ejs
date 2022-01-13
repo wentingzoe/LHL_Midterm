@@ -45,37 +45,49 @@
       <div class="mainContainer-todo">
         <!-- Adding task-->
         <%- include('partials/_add_task') %>
+        
 
         <% for (const i of tasks) { %>
+          
+
           <article class="showtask">
             <div class="card">
-              <h2><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg>List</h2>
+              <div class="category">
+                <h2><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg></h2>
                 <div class="dropdown">
-                  <button class="dropbtn">Change Category</button>
+                  <button class="dropbtn">Watch List</button>
                   <div class="dropdown-content">
-                    <a href="#">Watch</a>
-                    <a href="#">Eat</a>
-                    <a href="#">Read</a>
-                    <a href="#">Buy</a>
+                    <a href="#">Watch List</a>
+                    <a href="#">Eat List</a>
+                    <a href="#">Read List</a>
+                    <a href="#">Buy List</a>
                   </div>
                 </div>
-                <ul>
-                  <li>
-                    <input type="checkbox" class ="checkbox" />
-                    <div class="task_content" data-id="<%=i.id%>" data-title="<%=i.task_title%>" data-description="<%=i.task_description%>">
-                      <h3 class="tasktitle"><%=i.task_title%></h3>
-                      <p class="taskdes"><%=i.task_description%></p>
+              </div>
+              <div class="taskcontent">
+                <div class="task_content" data-id="<%=i.id%>" data-title="<%=i.task_title%>" data-description="<%=i.task_description%>">
+                  <div class="checkboxTitle">
+                    <div class="checkbox" checked="checked">
+                      <input type="checkbox"/>
+                      <span class="checkmark"></span>
                     </div>
-                    <button class="edit_button">Edit</button>
-                    <form method="POST" action="/tasks/<%=i.id%>/delete">
-                      <button>Delete</button>
-                    </form>
-                  </li>
-                </ul>
-            </div>
+                      <h3 class="tasktitle"><%=i.task_title%></h3>
+                  </div>
+                  <p class="taskdes"><%=i.task_description%></p>
+                  <div class="date">
+                    <p><%=i.end_date%></p>
+                  </div>
+                </div>
+                <div class="button-group edit_button">
+                  <button >Edit</button>
+                  <form method="POST" action="/tasks/<%=i.id%>/delete">
+                    <button>Delete</button>
+                  </form>
+                </div>
+              </div>
           </article>
-          <% } %>
+        <% } %>
       </div>
 
       
