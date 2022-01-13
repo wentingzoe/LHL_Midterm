@@ -19,7 +19,7 @@ CREATE TABLE categories (
 CREATE TABLE tasks (
   id SERIAL PRIMARY KEY NOT NULL,
   user_id INTEGER REFERENCES users(id) NOT NULL DEFAULT 3,
-  catagory_id INTEGER REFERENCES categories(id) NOT NULL DEFAULT 4,
+  category_id INTEGER REFERENCES categories(id) NOT NULL DEFAULT 4,
   task_title VARCHAR(255) NOT NULL,
   task_description TEXT,
   start_date TIMESTAMP NOT NULL DEFAULT CURRENT_DATE,
@@ -29,7 +29,7 @@ CREATE TABLE tasks (
 );
 
 CREATE TABLE profiles (
-  id SERIAL PRIMARY KEY NOT NULL,
+  id SERIAL PRIMARY KEY NOT NULL, 
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   img VARCHAR(2083),
   bio TEXT,

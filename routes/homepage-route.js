@@ -17,10 +17,8 @@ const homepageRoute = (db) => {
         })
     });
 
-    
-
     router.get("/tasks/eat", (request, response) => {
-        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 2;')
+        db.query('SELECT * FROM tasks WHERE category_id = 2;')
           .then((toEat) => {
             const templateVars = { toEats : toEat.rows }
             response.render("eatList", templateVars);
@@ -28,7 +26,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/read", (request, response) => {
-        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 3;')
+        db.query('SELECT * FROM tasks WHERE category_id = 3;')
           .then((toRead) => {
             const templateVars = { toReads : toRead.rows }
             response.render("readList", templateVars);
@@ -36,7 +34,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/buy", (request, response) => {
-        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 4;')
+        db.query('SELECT * FROM tasks WHERE category_id = 4;')
           .then((toBuy) => {
             const templateVars = { toBuys : toBuy.rows }
             response.render("buyList", templateVars);
@@ -44,7 +42,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/watch", (request, response) => {
-        db.query('SELECT * FROM tasks JOIN todolists ON tasks.id = task_id WHERE category_id = 1;')
+        db.query('SELECT * FROM tasks WHERE category_id = 1;')
           .then((toWatch) => {
             const templateVars = { toWatchs : toWatch.rows }
             response.render("watchList", templateVars);
@@ -52,7 +50,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/completed", (request, response) => {
-        db.query(`SELECT * FROM tasks JOIN statuses ON statuses.id = status_id WHERE status_name = 'Completed';`)
+        db.query(`SELECT * FROM tasks WHERE completed IS TRUE;`)
           .then((completed) => {
             const templateVars = { completeds : completed.rows }
             response.render("completed", templateVars);
@@ -60,7 +58,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/archived", (request, response) => {
-        db.query('SELECT * FROM tasks WHERE archived IS NULL;')
+        db.query('SELECT * FROM tasks WHERE archived IS FALSE;')
           .then((archived) => {
             const templateVars = { archiveds : archived.rows }
             response.render("archived", templateVars);

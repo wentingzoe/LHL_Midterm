@@ -10,7 +10,7 @@ module.exports = (db) => {
     console.log(req.body)
     // checkProduct(req.body.task_title);
       let queryString = `
-        INSERT INTO tasks (task_title, task_description, user_id, status_id)
+        INSERT INTO tasks (task_title, task_description, user_id, category_id)
         VALUES ($1, $2, $3, $4)
         RETURNING *;
       `;
