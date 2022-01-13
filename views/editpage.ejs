@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
-  <title>To Eat</title>
+  <title>TODO List Home Page</title>
 
   <!-- Google fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +17,7 @@
       <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
       <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css'>
   <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <!-- local CSS -->
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -25,51 +28,53 @@
 
   <!-- Scripts -->
     <!-- pickdate -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src ="/scripts/alltasks.js"></script>
+    <script src ="/scripts/showtask.js"></script>
+    <script src ="/scripts/edittasks.js"></script>
+
 
 </head>
 
 <body>
 
 
-  <!-- HEADER -->
-  <%- include('partials/_header'); %>
-
     <main id='mainContainer'>
 
       <!-- SIDEBAR -->
       <%- include('partials/_sidebar'); %>
+
       <div class="mainContainer-todo">
         <!-- Adding task-->
-        <%- include('partials/_add_task') %>
-
-        <% for (const i of toEats) { %>
-          <article class="showtask">
-            <div class="card">
+        <article class="new-task-container">
+            <div class="newcard newcard--accent">
               <h2><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg>Eat List</h2>
-                <div class="dropdown">
-                  <button class="dropbtn">Change Category</button>
-                  <div class="dropdown-content">
-                    <a href="#">Watch</a>
-                    <a href="#">Eat</a>
-                    <a href="#">Read</a>
-                    <a href="#">Buy</a>
-                  </div>
-                </div>
-                <ul>
-                  <li>
-                    <input type="checkbox" class ="checkbox" />
-                    <h3 class="tasktitle"><%=i.task_title%></h3>
-                    <p class="taskdes"><%=i.task_description%></p>
-                    <button >Edit</button>
-                    <button>Delete</button>
-                  </li>
-                </ul>
+                <use xlink:href="#icon-coffee" href="#icon-coffee" />
+              </svg>Editing?</h2>
+              <form action="/tasks/<%= task.id%>" method="POST" class="new-task">
+              <label class="input">
+                <input name="task_title" class="input__field" type="text" placeholder=" " value="<%=task.task_title%>"/>
+                <span class="input__label">Task Title</span>
+              </label>
+              <label class="input">
+                <input name="task_description" class="input__field" type="text" placeholder=" " value="<%=task.task_description%>" />
+                <span class="input__label">Task description</span>
+              </label>
+          
+              <div class="button-group">
+                <button class="pickdate">Pick Date</button>
+                <button type="submit">Edit</button>
+              </div>
+            </form>
             </div>
-          </article>
-          <% } %>
+        </article>
 
+        
+
+        
+        
       </div>
+
 
     </main>
 

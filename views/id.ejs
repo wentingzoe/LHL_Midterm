@@ -27,8 +27,10 @@
 
   <!-- Scripts -->
     <!-- pickdate -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src ="/scripts/alltasks.js"></script>
     <script src ="/scripts/showtask.js"></script>
+    <script src ="/scripts/edittasks.js"></script>
 
 
 </head>
@@ -43,8 +45,40 @@
       <div class="mainContainer-todo">
         <!-- Adding task-->
         <%- include('partials/_add_task') %>
-        <%- include('partials/_show_task') %>
+
+        <% for (const i of tasks) { %>
+          <article class="showtask">
+            <div class="card">
+              <h2><svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg>List</h2>
+                <div class="dropdown">
+                  <button class="dropbtn">Change Category</button>
+                  <div class="dropdown-content">
+                    <a href="#">Watch</a>
+                    <a href="#">Eat</a>
+                    <a href="#">Read</a>
+                    <a href="#">Buy</a>
+                  </div>
+                </div>
+                <ul>
+                  <li>
+                    <input type="checkbox" class ="checkbox" />
+                    <div class="task_content" data-id="<%=i.id%>" data-title="<%=i.task_title%>" data-description="<%=i.task_description%>">
+                      <h3 class="tasktitle"><%=i.task_title%></h3>
+                      <p class="taskdes"><%=i.task_description%></p>
+                    </div>
+                    <button class="edit_button">Edit</button>
+                    <form method="POST" action="/tasks/<%=i.id%>/delete">
+                      <button>Delete</button>
+                    </form>
+                  </li>
+                </ul>
+            </div>
+          </article>
+          <% } %>
       </div>
+
+      
 
     </main>
 
