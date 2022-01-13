@@ -6,7 +6,7 @@ CREATE TABLE tasks (
   status_id INTEGER REFERENCES statuses(id) NOT NULL DEFAULT 1,
   task_title VARCHAR(255) NOT NULL,
   task_description TEXT,
-  start_date DATE NOT NULL DEFAULT CURRENT_DATE,
-  end_date DATE,
+  start_date TIMESTAMP NOT NULL DEFAULT CURRENT_DATE,
+  end_date TIMESTAMP,
   archived boolean NOT NULL DEFAULT FALSE
 );
