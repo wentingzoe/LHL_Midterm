@@ -12,6 +12,7 @@ module.exports = (db) => {
         VALUES ($1, $2, $3, $4)
         RETURNING *;
       `;
+
       let queryParams = [req.body.task_title, req.body.task_description, 1, 1];
       db.query(queryString, queryParams)
       .then((data) => {
@@ -83,6 +84,7 @@ module.exports = (db) => {
       SET task_title = $1, task_description = $2, start_date = $3, end_date =$4
       WHERE id = $5;`;
       let queryParams = [req.body.task_title, req.body.task_desc, req.bodystart_date, req.body.end_date, req.body.id];
+
       db.query(queryString, queryParams)
       .then((data) => {
         const tasks = data.rows;
