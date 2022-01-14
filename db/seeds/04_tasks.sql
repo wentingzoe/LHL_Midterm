@@ -1,4 +1,4 @@
-INSERT INTO tasks (user_id, catagory_id, task_title, task_description,start_date, end_date) VALUES
+INSERT INTO tasks (user_id, category_id, task_title, task_description,start_date, end_date) VALUES
 -- ---Watching list
 (1, 1,'Inception', 'Very nice movie to watch','2022-01-15','2022-01-16'),
 (2, 1, 'Citizen Kane', 'Hollywood classic','2022-01-20','2022-01-21' ),
