@@ -41,7 +41,7 @@
       <%- include('partials/_sidebar'); %>
       <div class="mainContainer-todo">
         <!-- Adding task-->
-        <%- include('partials/_add_task') %>
+        
 
         <% for (const i of archiveds) { %>
 
@@ -71,7 +71,10 @@
                   </div>
                   <p class="taskdes"><%=i.task_description%></p>
                   <div class="date">
-                    <p><%=i.end_date%></p>
+                    <p><% if(i.end_date) { %>
+                      <%=i.end_date.toDateString() %>
+                      <% } %>
+                    </p>
                   </div>
                 </div>
                 <div class="button-group edit_button">

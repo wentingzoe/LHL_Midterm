@@ -52,9 +52,9 @@ module.exports = (db) => {
   router.post("/:id", (request, response) => {
     
     const queryString = `UPDATE tasks
-        SET task_title = $1, task_description = $2
+        SET task_title = $1, task_description = $2, end_date = $4
         WHERE id = $3;`;
-        const values = [request.body.task_title, request.body.task_description, request.params.id];
+        const values = [request.body.task_title, request.body.task_description, request.params.id, request.body.task_end];
     db.query(queryString,values)
       .then(res => res.rows)
       .catch(err => console.error(err.message));
@@ -102,16 +102,35 @@ module.exports = (db) => {
     });
 
     router.post("/:id/checkbox", (request, response) => {
-      let queryString = `UPDATE tasks
+      let queryString = `
+      UPDATE tasks
       SET completed = TRUE
-      WHERE id = $1;`;
+      WHERE id = $1;
+      `;
       let queryParams = [request.params.id];
       db.query(queryString, queryParams)
         .then((data) => {
-          console.log("Successfully updated")
-          response.json({message: "success"})
+          console.log("Successfully updated");
+          response.json({message: "success"});
+        });
+      
+    });
+
+    router.post("/:id/category", (request, response) => {
+      console.log(request.params.id)
+      let queryString = `
+      UPDATE tasks
+      SET category_id = $2
+      WHERE id = $1;
+      `;
+      let queryParams = [request.params.id, request.body.categoryId];
+      db.query(queryString, queryParams)
+        .then((data) => {
+          console.log("Successfully changed the category.")
+          response.json({message: "changed"});
+          
         })
-    })
+    });
 
   return router;
 };
