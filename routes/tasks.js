@@ -126,10 +126,11 @@ module.exports = (db) => {
       let queryParams = [request.params.id, request.body.categoryId];
       db.query(queryString, queryParams)
         .then((data) => {
+          response.redirect("/tasks/watch");
           console.log("Successfully changed the category.")
           response.json({message: "changed"});
-          
         })
+      
     });
 
   return router;
