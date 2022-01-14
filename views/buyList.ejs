@@ -42,13 +42,15 @@
 
   <!-- HEADER -->
   <!-- <%- include('partials/_header'); %> -->
-
+  <div class="background--custom">
     <main id='mainContainer'>
 
       <!-- SIDEBAR -->
       <%- include('partials/_sidebar'); %>
       <div class="mainContainer-todo">
         <!-- Adding task-->
+
+        <div class="show-task">
 
 
       <% for (const i of toBuys) { %>
@@ -108,10 +110,11 @@
         </article>
       <% } %>
 
-      </div>
+    </div>
+  </div>
 
-    </main>
+</main>
 
 </body>
-
+</div>
 </html>

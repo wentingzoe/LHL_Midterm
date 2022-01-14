@@ -7,7 +7,7 @@ $(document).ready(() => {
         taskContent.append($(form));
     });
 
-    
+
     const createEditForm =  function(tasksId, task_title, task_description, task_end_date) {
       return `
       <form action="/tasks/${tasksId}" method="POST" class="new-task">
@@ -19,10 +19,10 @@ $(document).ready(() => {
       <input name="task_description" class="input__field" type="text" placeholder=" " value="${task_description}" />
       <span class="input__label">Task description</span>
       </label>
-      
+
       <div class="button-group">
       <label for="start">End date:</label>
-      
+
       <input type="date" id="enddate" name="task_end"
       value="${task_end_date}" >
       <button type="submit">Save</button>
@@ -34,9 +34,10 @@ $(document).ready(() => {
       console.log($(this).attr("id"));
       const id = $(this).attr("id");
         $.ajax({
-          url:`/tasks/${id}/checkbox`, 
+          url:`/tasks/${id}/checkbox`,
           type:"POST",
           success:function(data) {
+            location.reload();
             console.log(data.message)
           },
           error:function(err) {
@@ -52,19 +53,20 @@ $(document).ready(() => {
       console.log($(this).attr("id"));
       const id = $(this).attr("id");
         $.ajax({
-          url:`/tasks/${id}/category`, 
+          url:`/tasks/${id}/category`,
           type:"POST",
           data:{
             categoryId
           },
           success:function(data) {
             console.log(data.message)
+            location.reload();
           },
           error:function(err) {
             console.log(err)
           }
         });
-      
+
     });
 
 });

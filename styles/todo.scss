@@ -33,15 +33,39 @@ mark {
   font-weight: bold;
   padding: 0 0.2em;
 }
+.background--custom {
+  background: linear-gradient(90deg, #a4baf5, #bee74da7, #c193e0);
+  background-size: 400% 400%;
+  animation: gradient 4s alternate infinite;
+  position: absolute;
+  padding-bottom: 5%;
+
+  top: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 100%;
+  }
+}
+
 
   #mainContainer {
     display: flex;
     flex-direction: row;
     min-height: calc(100vh - 110px);
+
+    // sidebar
     .menu{
       position: fixed;
       display: block;
-      z-index: 2;
+      float: left;
+      z-index: 1;
       height:100vh;
       width:35%;
       position:fixed;
@@ -156,13 +180,13 @@ mark {
     flex: 1;
     padding-left:5em;
     padding-right:5em;
-
-  // .column {
-  //   display: flex;
-  //   flex-direction: column;
-  //   flex-basis: 100%;
-  //   flex: 1;
-  // }
+    .topimg {
+      text-align: center;
+      width: 10px;
+      height: 6px;
+      margin-top: 30px;
+      margin-bottom: -20px;
+  }
 
 }
 .show-task {
@@ -170,6 +194,14 @@ mark {
   flex-direction: row;
   flex-wrap: wrap-reverse;
   width:100%;
+  align-content: flex-start;
+}
+.showtask-sidepage {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width:100%;
+  align-content: flex-start;
 }
 
 // for task card
