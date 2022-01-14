@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-// const {checkProduct} = require('../categories/buyapi')
+const { addCategory } = require('../categories/addCategory')
 
 
 module.exports = (db) => {
@@ -8,20 +8,22 @@ module.exports = (db) => {
   router.post("/add", (req, res) => {
     console.log("test!");
     console.log(req.body);
-
+    addCategory(req.body.task_title,req.body.task_description, (err, data) =>{
       let queryString = `
         INSERT INTO tasks (task_title, task_description, end_date, user_id, category_id)
         VALUES ($1, $2, $3, $4, $5)
         RETURNING *;
       `;
 
-      let queryParams = [req.body.task_title, req.body.task_description, req.body.task_end_date, 1, 1];
+      let queryParams = [req.body.task_title, req.body.task_description, req.body.task_end_date, 1, data];
       db.query(queryString, queryParams)
       .then((data) => {
 
         const tasks = data.rows;
+        console.log(tasks);
         console.log("Successfully, inserted!");
-        res.json({ tasks });
+        // res.json({ tasks });
+        res.redirect("/tasks");
       })
       .catch(err => {
         console.log("I suck", err);
@@ -29,8 +31,7 @@ module.exports = (db) => {
           .status(500)
           .json({ error: err.message });
       });
-      res.redirect("/tasks");
-
+    })
   });
 
 
@@ -50,7 +51,7 @@ module.exports = (db) => {
   });
 
   router.post("/:id", (request, response) => {
-    
+
     const queryString = `UPDATE tasks
         SET task_title = $1, task_description = $2, end_date = $4
         WHERE id = $3;`;
@@ -113,7 +114,7 @@ module.exports = (db) => {
           console.log("Successfully updated");
           response.json({message: "success"});
         });
-      
+
     });
 
     router.post("/:id/category", (request, response) => {
@@ -130,7 +131,7 @@ module.exports = (db) => {
           console.log("Successfully changed the category.")
           response.json({message: "changed"});
         })
-      
+
     });
 
   return router;
