@@ -63,7 +63,8 @@ $(document).ready(() => {
           error:function(err) {
             console.log(err)
           }
-        })
+        });
+      
     });
 
 });
