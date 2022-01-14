@@ -37,7 +37,7 @@
 
 <body>
 
-  <%- include('./partials/_header') %>
+  <!-- <%- include('./partials/_header') %> -->
 
     <main id='mainContainer'>
 
@@ -47,17 +47,17 @@
         <!-- Adding task-->
         <%- include('partials/_add_task') %>
 
-
+        <div class="show-task">
         <% for (const i of tasks) { %>
 
           <article class="showtask">
             <div class="card">
               <div class="category">
                 <h2><svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg></h2>
+                  <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg></h2>
                 <div class="dropdown">
                   <button class="dropbtn"><% if(i.category_id === 1) { %>
-                    <%="Watch List"%>
+                        <%="Watch List"%>
                     <% } else if (i.category_id === 2) { %>
                     <%="Eat List"%>
                     <% } else if (i.category_id === 3) { %>
@@ -104,6 +104,7 @@
               </div>
           </article>
         <% } %>
+      </div>
       </div>
 
 

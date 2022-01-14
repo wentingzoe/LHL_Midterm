@@ -20,7 +20,7 @@ module.exports = (db) => {
       .then((data) => {
 
         const tasks = data.rows;
-        console.log(tasks);
+        // console.log(tasks);
         console.log("Successfully, inserted!");
         // res.json({ tasks });
         res.redirect("/tasks");
