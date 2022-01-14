@@ -22,6 +22,8 @@
 <link rel="stylesheet" href="/styles/add_task.css" type="text/css" />
 <link rel="stylesheet" href="/styles/todo.css" type="text/css" />
 <link rel="stylesheet" href="/styles/show_task.css" type="text/css" />
+<!-- <link rel="stylesheet" href="/styles/layout.css" type="text/css" /> -->
+
 
 
   <!-- Scripts -->
@@ -35,11 +37,11 @@
 
 <body>
 
-  
+
 
 
   <!-- HEADER -->
-  <%- include('partials/_header'); %>
+  <!-- <%- include('partials/_header'); %> -->
 
     <main id='mainContainer'>
 
@@ -47,17 +49,21 @@
       <%- include('partials/_sidebar'); %>
       <div class="mainContainer-todo">
         <!-- Adding task-->
-      
+
 
       <% for (const i of toBuys) { %>
 
         <article class="showtask">
           <div class="card">
             <div class="category">
-              <h2><svg class="icon" aria-hidden="true">
-              <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg></h2>
+
               <div class="dropdown">
-                <button class="dropbtn"><% if(i.category_id === 1) { %>
+                <button class="dropbtn"><?xml version="1.0" encoding="UTF-8"?>
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="35px" viewBox="0 0 20 35" version="1.1">
+                  <g id="surface1">
+                  <path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 14.527344 15.953125 L 7.027344 13.796875 C 6.160156 13.546875 5.554688 12.75 5.554688 11.859375 C 5.554688 10.746094 6.472656 9.84375 7.605469 9.84375 L 12.207031 9.84375 C 13.054688 9.84375 13.890625 10.097656 14.582031 10.5625 C 15.007812 10.84375 15.578125 10.773438 15.9375 10.425781 L 18.355469 8.101562 C 18.847656 7.628906 18.777344 6.84375 18.230469 6.425781 C 16.527344 5.113281 14.402344 4.382812 12.222656 4.375 L 12.222656 1.09375 C 12.222656 0.492188 11.722656 0 11.109375 0 L 8.890625 0 C 8.277344 0 7.777344 0.492188 7.777344 1.09375 L 7.777344 4.375 L 7.605469 4.375 C 3.179688 4.375 -0.375 8.113281 0.0351562 12.550781 C 0.328125 15.703125 2.769531 18.265625 5.855469 19.15625 L 12.972656 21.203125 C 13.839844 21.457031 14.445312 22.25 14.445312 23.140625 C 14.445312 24.253906 13.527344 25.15625 12.394531 25.15625 L 7.792969 25.15625 C 6.945312 25.15625 6.109375 24.902344 5.417969 24.4375 C 4.992188 24.15625 4.421875 24.226562 4.0625 24.574219 L 1.644531 26.898438 C 1.152344 27.371094 1.222656 28.15625 1.769531 28.574219 C 3.472656 29.886719 5.597656 30.617188 7.777344 30.625 L 7.777344 33.90625 C 7.777344 34.507812 8.277344 35 8.890625 35 L 11.109375 35 C 11.722656 35 12.222656 34.507812 12.222656 33.90625 L 12.222656 30.609375 C 15.457031 30.550781 18.492188 28.65625 19.5625 25.640625 C 21.054688 21.429688 18.546875 17.109375 14.527344 15.957031 Z M 14.527344 15.953125 "/>
+                  </g>
+                  </svg><% if(i.category_id === 1) { %>
                   <%="Watch List"%>
                   <% } else if (i.category_id === 2) { %>
                   <%="Eat List"%>
@@ -101,7 +107,7 @@
             </div>
         </article>
       <% } %>
-      
+
       </div>
 
     </main>
