@@ -41,7 +41,7 @@
       <%- include('partials/_sidebar'); %>
       <div class="mainContainer-todo">
         <!-- Adding task-->
-        <%- include('partials/_add_task') %>
+      
 
         <% for (const i of completeds) { %>
 
@@ -63,15 +63,15 @@
               <div class="taskcontent">
                 <div class="task_content" data-id="<%=i.id%>" data-title="<%=i.task_title%>" data-description="<%=i.task_description%>">
                   <div class="checkboxTitle">
-                    <div class="checkbox" checked="checked">
-                      <input type="checkbox"/>
-                      <span class="checkmark"></span>
-                    </div>
+                    
                       <h3 class="tasktitle"><%=i.task_title%></h3>
                   </div>
                   <p class="taskdes"><%=i.task_description%></p>
                   <div class="date">
-                    <p><%=i.end_date%></p>
+                    <p><% if(i.end_date) { %>
+                      <%=i.end_date.toDateString() %>
+                      <% } %>
+                    </p>
                   </div>
                 </div>
                 <div class="button-group edit_button">

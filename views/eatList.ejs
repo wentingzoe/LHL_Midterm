@@ -44,7 +44,7 @@
       <%- include('partials/_sidebar'); %>
       <div class="mainContainer-todo">
         <!-- Adding task-->
-        <%- include('partials/_add_task') %>
+      
 
         <% for (const i of toEats) { %>
 
@@ -54,19 +54,19 @@
                 <h2><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg></h2>
                 <div class="dropdown">
-                  <button class="dropbtn">Watch List</button>
-                  <div class="dropdown-content">
-                    <a href="#">Watch List</a>
-                    <a href="#">Eat List</a>
-                    <a href="#">Read List</a>
-                    <a href="#">Buy List</a>
+                  <button class="dropbtn">Eat List</button>
+                  <div class="dropdown-content" id="<%=i.id%>">
+                    <a data-category="1" href="#">Watch List</a>
+                    <a data-category="2" href="#">Eat List</a>
+                    <a data-category="3" href="#">Read List</a>
+                    <a data-category="4" href="#">Buy List</a>
                   </div>
                 </div>
               </div>
               <div class="taskcontent">
                 <div class="task_content" data-id="<%=i.id%>" data-title="<%=i.task_title%>" data-description="<%=i.task_description%>">
                   <div class="checkboxTitle">
-                    <div class="checkbox" checked="checked">
+                    <div class="checkbox" id="<%=i.id%>" checked="checked">
                       <input type="checkbox"/>
                       <span class="checkmark"></span>
                     </div>
@@ -74,7 +74,10 @@
                   </div>
                   <p class="taskdes"><%=i.task_description%></p>
                   <div class="date">
-                    <p><%=i.end_date%></p>
+                    <p><% if(i.end_date) { %>
+                      <%=i.end_date.toDateString() %>
+                      <% } %>
+                    </p>
                   </div>
                 </div>
                 <div class="button-group edit_button">
