@@ -17,7 +17,7 @@ nav {
   color: #FFFFFF;
   background-color: #4686C8;
 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Secular One';
 
 //   font-family: "Secular One";
 
@@ -39,6 +39,7 @@ nav {
 
   .navbar-brand {
     position: fixed;
+    padding-left: 10px;
     left: 0;
     color: white;
   }
@@ -51,18 +52,77 @@ nav {
   #sign {
     position: fixed;
     right: 2px;
+    padding-right: 5px;
   }
 
 }
 
 span {
 
-  #ind {
+  .motto {
+    padding-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: #4686C8;
+   display: flex;
+   justify-content: center;
+   text-shadow: 3px 3px #bd9682d7
+  }
+
+  .gr {
+    display: flex;
+    justify-content: center;
+    margin-left: 80px;
+    width: 700px;
+    height: 500px
+  }
+  .ind {
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .sgn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+   -webkit-text-stroke-color: black;
+    display: flex;
+    justify-content: center;
+    text-shadow: 3px 3px #bd9682d7
+  }
+
+  .ben {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+  }
+
+  .pic1 {
+    border: 2px solid #4686C8;
+    border-radius: 10px;
+    box-shadow: 1px 1px 7px 5px #bd9682d7;
+    width: 125px;
+    height: 125px;
+  }
+
+  .cat {
+    position: relative;
+    right: 100px;
+  }
+
+  .chk {
+    position: relative;
+    right: 40px;
+  }
+
+  .time {
+    position: relative;
+    left: 90px;
   }
 }
-
-
-
-

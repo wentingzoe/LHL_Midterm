@@ -1,7 +1,7 @@
 'use strict';
 
 const yelp = require('yelp-fusion');
-const client = yelp.client('process.env.YELP_API');
+const client = yelp.client(process.env.YELP_API);
 
 
 const checkFood = function (taskTitle) {
@@ -13,6 +13,7 @@ const checkFood = function (taskTitle) {
       term: taskTitle,
       location: 'san francisco, ca',
     }).then(response => {
+      console.log(response.jsonBody.businesses);
       for (const restaurant of response.jsonBody.businesses){
         const restoName = restaurant.name.toLowerCase();
         if(restoName === taskTitle) {
@@ -23,7 +24,7 @@ const checkFood = function (taskTitle) {
       console.log(`No exact match found for: ${taskTitle}`)
       return resolve (false);
     }).catch(e => {
-      console.log(`No restaurant found by the name: ${taskTitle}`);
+      console.log(e);
       return resolve(false);
     });
   })
