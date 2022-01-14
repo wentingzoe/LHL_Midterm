@@ -4,6 +4,7 @@
   --color-light: white;
   --color-dark: #4686C8;
   --color-signal: #E5B9A3;
+  --color-option:#09427D;
 
   --color-background: var(--color-light);
   --color-text: var(--color-dark);
@@ -38,6 +39,9 @@ mark {
     flex-direction: row;
     min-height: calc(100vh - 110px);
     .menu{
+      position: fixed;
+      display: block;
+      z-index: 2;
       height:100vh;
       width:35%;
       position:fixed;
@@ -50,11 +54,11 @@ mark {
       padding: calc(4 * var(--size-bezel));
       margin-top: calc(4 * var(--size-bezel));
       border-radius: var(--size-radius);
-      border: 3px solid;
+      border: 3px solid var(--color-option);
       box-shadow: .5rem .5rem 0 var(--color-signal);
 
       .avatar{
-        background:rgba(0,0,0,0.1);
+
         padding:2em 0.5em;
         text-align:center;
 
@@ -145,29 +149,29 @@ mark {
     }
   }
 
-  .mainContainer-wrapper {
+  .mainContainer-todo {
     display: flex;
     flex-direction: column;
-    flex-basis: 100%;
+    flex-basis: auto;
     flex: 1;
-    padding-left:8em;
-    padding-right: 8em;
+    padding-left:5em;
+    padding-right:5em;
 
-  .row {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: space-evenly;
-    width: 100%;
-  }
+  // .column {
+  //   display: flex;
+  //   flex-direction: column;
+  //   flex-basis: 100%;
+  //   flex: 1;
+  // }
 
-  .column {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    flex: 1;
-  }
 }
+.show-task {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  width:100%;
+}
+
 // for task card
 .card {
   background: var(--color-background);
@@ -176,6 +180,7 @@ mark {
   border-radius: var(--size-radius);
   border: 3px solid var(--color-shadow, currentColor);
   box-shadow: .5rem .5rem 0 var(--color-shadow, currentColor);
+
 
   &--inverted {
     --color-background: var(--color-dark);
