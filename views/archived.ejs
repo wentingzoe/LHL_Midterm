@@ -41,7 +41,7 @@
       <%- include('partials/_sidebar'); %>
       <div class="mainContainer-todo">
         <!-- Adding task-->
-        <%- include('partials/_add_task') %>
+        
 
         <% for (const i of archiveds) { %>
 
@@ -51,7 +51,16 @@
                 <h2><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg></h2>
                 <div class="dropdown">
-                  <button class="dropbtn">Watch List</button>
+                  <button class="dropbtn"><% if(i.category_id === 1) { %>
+                    <%="Watch List"%>
+                    <% } else if (i.category_id === 2) { %>
+                    <%="Eat List"%>
+                    <% } else if (i.category_id === 3) { %>
+                    <%="Read List"%>
+                    <% } else if (i.category_id === 4) { %>
+                    <%="Buy List"%>
+                    <% } %>
+                  </button>
                   <div class="dropdown-content">
                     <a href="#">Watch List</a>
                     <a href="#">Eat List</a>
@@ -71,7 +80,10 @@
                   </div>
                   <p class="taskdes"><%=i.task_description%></p>
                   <div class="date">
-                    <p><%=i.end_date%></p>
+                    <p><% if(i.end_date) { %>
+                      <%=i.end_date.toDateString() %>
+                      <% } %>
+                    </p>
                   </div>
                 </div>
                 <div class="button-group edit_button">

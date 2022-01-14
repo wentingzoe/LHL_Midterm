@@ -37,6 +37,7 @@
 
 <body>
 
+  <%- include('partials/_header'); %>
 
     <main id='mainContainer'>
 
@@ -49,34 +50,49 @@
 
         <% for (const i of tasks) { %>
           
-
           <article class="showtask">
             <div class="card">
               <div class="category">
                 <h2><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg></h2>
                 <div class="dropdown">
-                  <button class="dropbtn">Watch List</button>
-                  <div class="dropdown-content">
-                    <a href="#">Watch List</a>
-                    <a href="#">Eat List</a>
-                    <a href="#">Read List</a>
-                    <a href="#">Buy List</a>
+                  <button class="dropbtn"><% if(i.category_id === 1) { %>
+                    <%="Watch List"%>
+                    <% } else if (i.category_id === 2) { %>
+                    <%="Eat List"%>
+                    <% } else if (i.category_id === 3) { %>
+                    <%="Read List"%>
+                    <% } else if (i.category_id === 4) { %>
+                    <%="Buy List"%>
+                    <% } %>
+                  </button>
+                  <div class="dropdown-content" id="<%=i.id%>">
+                    <a data-category="1" href="#">Watch List</a>
+                    <a data-category="2" href="#">Eat List</a>
+                    <a data-category="3" href="#">Read List</a>
+                    <a data-category="4" href="#">Buy List</a>
                   </div>
                 </div>
               </div>
               <div class="taskcontent">
                 <div class="task_content" data-id="<%=i.id%>" data-title="<%=i.task_title%>" data-description="<%=i.task_description%>">
                   <div class="checkboxTitle">
-                    <div class="checkbox" checked="checked">
-                      <input type="checkbox"/>
+                    
+                    <div class="checkbox" id="<%=i.id%>" checked="checked">
+                      
+                      <input type="checkbox" />
                       <span class="checkmark"></span>
+                      
                     </div>
+                    
                       <h3 class="tasktitle"><%=i.task_title%></h3>
                   </div>
                   <p class="taskdes"><%=i.task_description%></p>
                   <div class="date">
-                    <p><%=i.end_date%></p>
+                    <p><% if(i.end_date) { %>
+                      <%=i.end_date.toDateString() %>
+                      <% } %>
+                    </p>
                   </div>
                 </div>
                 <div class="button-group edit_button">

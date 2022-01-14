@@ -9,7 +9,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks", (request, response) => {
-        db.query('SELECT * FROM tasks;')
+        db.query('SELECT * FROM tasks WHERE completed IS FALSE;')
           .then((task) => {
             console.log(task.rows)
             const templateVars = { tasks : task.rows }
@@ -18,7 +18,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/eat", (request, response) => {
-        db.query('SELECT * FROM tasks WHERE category_id = 2;')
+        db.query('SELECT * FROM tasks WHERE category_id = 2 AND completed IS FALSE;')
           .then((toEat) => {
             const templateVars = { toEats : toEat.rows }
             response.render("eatList", templateVars);
@@ -26,7 +26,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/read", (request, response) => {
-        db.query('SELECT * FROM tasks WHERE category_id = 3;')
+        db.query('SELECT * FROM tasks WHERE category_id = 3 AND completed IS FALSE;')
           .then((toRead) => {
             const templateVars = { toReads : toRead.rows }
             response.render("readList", templateVars);
@@ -34,7 +34,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/buy", (request, response) => {
-        db.query('SELECT * FROM tasks WHERE category_id = 4;')
+        db.query('SELECT * FROM tasks WHERE category_id = 4 AND completed IS FALSE;')
           .then((toBuy) => {
             const templateVars = { toBuys : toBuy.rows }
             response.render("buyList", templateVars);
@@ -42,7 +42,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/watch", (request, response) => {
-        db.query('SELECT * FROM tasks WHERE category_id = 1;')
+        db.query('SELECT * FROM tasks WHERE category_id = 1 AND completed IS FALSE;')
           .then((toWatch) => {
             const templateVars = { toWatchs : toWatch.rows }
             response.render("watchList", templateVars);
@@ -58,7 +58,7 @@ const homepageRoute = (db) => {
     });
 
     router.get("/tasks/archived", (request, response) => {
-        db.query('SELECT * FROM tasks WHERE archived IS FALSE;')
+        db.query('SELECT * FROM tasks WHERE archived IS TRUE;')
           .then((archived) => {
             const templateVars = { archiveds : archived.rows }
             response.render("archived", templateVars);

@@ -41,7 +41,7 @@
       <%- include('partials/_sidebar'); %>
       <div class="mainContainer-todo">
         <!-- Adding task-->
-        <%- include('partials/_add_task') %>
+      
 
         <% for (const i of completeds) { %>
 
@@ -51,7 +51,16 @@
                 <h2><svg class="icon" aria-hidden="true">
                 <use xlink:href="#icon-coffee" href="#icon-coffee" /></svg></h2>
                 <div class="dropdown">
-                  <button class="dropbtn">Watch List</button>
+                  <button class="dropbtn"><% if(i.category_id === 1) { %>
+                    <%="Watch List"%>
+                    <% } else if (i.category_id === 2) { %>
+                    <%="Eat List"%>
+                    <% } else if (i.category_id === 3) { %>
+                    <%="Read List"%>
+                    <% } else if (i.category_id === 4) { %>
+                    <%="Buy List"%>
+                    <% } %>
+                  </button>
                   <div class="dropdown-content">
                     <a href="#">Watch List</a>
                     <a href="#">Eat List</a>
@@ -63,15 +72,15 @@
               <div class="taskcontent">
                 <div class="task_content" data-id="<%=i.id%>" data-title="<%=i.task_title%>" data-description="<%=i.task_description%>">
                   <div class="checkboxTitle">
-                    <div class="checkbox" checked="checked">
-                      <input type="checkbox"/>
-                      <span class="checkmark"></span>
-                    </div>
+                    
                       <h3 class="tasktitle"><%=i.task_title%></h3>
                   </div>
                   <p class="taskdes"><%=i.task_description%></p>
                   <div class="date">
-                    <p><%=i.end_date%></p>
+                    <p><% if(i.end_date) { %>
+                      <%=i.end_date.toDateString() %>
+                      <% } %>
+                    </p>
                   </div>
                 </div>
                 <div class="button-group edit_button">

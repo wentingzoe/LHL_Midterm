@@ -2,11 +2,12 @@ DROP TABLE IF EXISTS tasks CASCADE;
 
 CREATE TABLE tasks (
   id SERIAL PRIMARY KEY NOT NULL,
-  user_id INTEGER REFERENCES users(id) NOT NULL DEFAULT 1,
-  status_id INTEGER REFERENCES statuses(id) NOT NULL DEFAULT 1,
+  user_id INTEGER REFERENCES users(id) NOT NULL DEFAULT 3,
+  category_id INTEGER REFERENCES categories(id) NOT NULL DEFAULT 4,
   task_title VARCHAR(255) NOT NULL,
   task_description TEXT,
   start_date TIMESTAMP NOT NULL DEFAULT CURRENT_DATE,
   end_date TIMESTAMP,
+  completed boolean NOT NULL DEFAULT FALSE,
   archived boolean NOT NULL DEFAULT FALSE
 );
