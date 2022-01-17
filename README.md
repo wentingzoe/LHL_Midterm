@@ -1,5 +1,34 @@
-LHL Node Skeleton
+LHL Smart TODO List
 =========
+## Auto categorized each todo tasks as: 
+
+*To watch 
+*To eat
+*To read
+*To buy
+
+### homepage
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/homepage.png)
+### todolist homepage
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/homepage.png)
+### add tasks
+![] (https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/add_tasks.png)
+### edit and delete tasks
+![edit and delete tasks](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/edit_tasks.png)
+### change category 
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/edit_cate.png?raw=true)
+### watch list page 
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/watch_list.png)
+### eat list page
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/eat_list.png)
+### read list page
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/read_list.png)
+### buy list page 
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/buy_list.png)
+### completed tasks page
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/completed.png)
+
+
 
 ## Project Setup
 
@@ -26,6 +55,10 @@ The following steps are only for _one_ of the group members to perform.
 7. Run the server: `npm run local`
   - Note: nodemon is used, so you should not have to restart your server
 8. Visit `http://localhost:8080/`
+
+## API set-up 
+
+This todo-list is using WolfromAlpha<https://www.wolframalpha.com/> API, which compute expert-level answers using Wolfram’s breakthrough algorithms, knowledgebase and AI technology. It will need set-up requst package: `npm i requst`;
 
 ## Warnings & Tips
 
