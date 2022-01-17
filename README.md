@@ -10,9 +10,9 @@ LHL Smart TODO List
 ### homepage
 ![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/homepage.png)
 ### todolist homepage
-![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/homepage.png)
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/todolist.png?raw=true)
 ### add tasks
-![] (https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/add_tasks.png)
+![](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/add_tasks.png)
 ### edit and delete tasks
 ![edit and delete tasks](https://github.com/wentingzoe/LHL_Midterm/blob/master/doc/screenshot/edit_tasks.png)
 ### change category 
